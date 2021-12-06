@@ -24,8 +24,9 @@ J = {
 
 }
 
+# fügen Sie hier die zusätzlichen Koppler aus Ihrer Rechnung ein
+mu = 1.3  # Beispiel
 # nun fügen wir zu jedem Koppler 2*mu hinzu
-mu = 1.3
 for i in range(16):
     for j in range(i+1,16):
         if (i,j) in J:
