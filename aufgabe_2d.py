@@ -1,10 +1,11 @@
-from dwave.system import DWaveSampler
+from dwave.system import DWaveSampler, EmbeddingComposite
 import dwave.inspector
 
-sampler = DWaveSampler(
+sampler = EmbeddingComposite(DWaveSampler(
     solver='DW_2000Q_6',
+    #solver='Advantage_system4.1',
     #token='',
-)
+))
 
 h = {}
 
@@ -22,6 +23,9 @@ J = {
     (4,12): +1, (6,14): +1, (7,15): -1
 
 }
+
+# fügen Sie hier die zusätzlichen Koppler aus Ihrer Rechnung ein
+mu = 1.3  # Beispiel
 
 response = sampler.sample_ising(
     h, 
